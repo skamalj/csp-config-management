@@ -1,0 +1,12 @@
+apiVersion: configmanagement.gke.io/v1
+kind: ConfigManagement
+metadata:
+  name: config-management
+spec:
+  policyController:
+    enabled: true
+  git:
+    syncRepo: "https://github.com/skamalj/csp-config-management.git"
+    syncBranch: 1.0.0
+    secretType: none
+    policyDir: "anthoslab2"
