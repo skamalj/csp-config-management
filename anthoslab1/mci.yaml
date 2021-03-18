@@ -1,0 +1,10 @@
+apiVersion: networking.gke.io/v1
+kind: MultiClusterIngress
+metadata:
+  name: bookinfo-ingress
+spec:
+  template:
+    spec:
+      backend:
+        serviceName: productpage-mcs
+        servicePort: 9080

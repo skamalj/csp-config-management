@@ -1,0 +1,16 @@
+apiVersion: networking.gke.io/v1
+kind: MultiClusterService
+metadata:
+  name: productpage-mcs
+  labels:
+    app: productpage
+    service: productpage
+spec:
+  template:
+    spec:
+      selector:
+        app: productpage
+      ports:
+       - port: 9080
+         name: http
+         targetPort: 9080
